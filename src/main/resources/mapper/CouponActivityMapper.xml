@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springbootdemo.scheduled.dao.CouponActivityMapper">
+
+    <select id="selectCouponActivityList" parameterType="com.example.springbootdemo.scheduled.bean.CouponActivityQuery"
+            resultType="com.example.springbootdemo.scheduled.bean.CouponActivityListDTO">
+        select
+        <if test="state == 4">
+             4 as state,
+         </if>
+        <if test="state != 4">
+            state,
+        </if>
+        date_format(begin_date,'%Y/%m/%d') as beginDate,
+        date_format(end_date,'%Y/%m/%d') as endDate,
+        coupon_name as couponName,
+        coupon_type as couponType,
+        coupon_activity_id as couponActivityId
+        from es_saas_activity.coupon_activity
+        <where>
+            <if test="shopId != null">
+                and shop_id = #{shopId}
+            </if>
+            <if test="couponActivityId != null">
+                and coupon_activity_id = #{couponActivityId}
+            </if>
+            <if test="state != null">
+                <if test="state == 4">
+                    and state = 0 and begin_date <![CDATA[ > ]]> CURDATE()
+                </if>
+                <if test="state != 4">
+                    and state = #{state}
+                </if>
+            </if>
+
+            <if test="couponName != null">
+                and coupon_name like CONCAT('%',#{couponName},'%')
+            </if>
+             <if test=" beginDate != null and endDate != null ">
+                 <![CDATA[ and begin_date >= #{beginDate} and end_date < date_add(str_to_date(#{endDate}, '%Y-%m-%d'), interval 1 day)  ]]>
+            </if>
+            <if test="states != null and states.size>0" >
+                and state  in
+                <foreach collection="states" item="item" separator="," open="(" close=")">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="couponType != null">
+                and coupon_type = #{couponType}
+            </if>
+            <if test="couponExpired">
+                <![CDATA[  and coupon_disable_date < CURDATE()   ]]>
+            </if>
+            <if test="activityExpired">
+                <![CDATA[  and end_date < CURDATE()   ]]>
+            </if>
+        </where>
+            order by create_time desc
+    </select>
+
+
+</mapper>

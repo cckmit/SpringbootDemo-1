@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springbootdemo.scheduled.dao.ProductSkuDao">
+
+    <select id="selectProductSkuList" resultType="hashmap" parameterType="map">
+        select * from product_sku where city_id = 999
+    </select>
+
+    <select id="selectSynStockList" parameterType="map" resultType="list">
+        select
+        distinct
+        pro.product_name as productName,
+        pro.display_first_category_id as firstCategoryId,
+        pro.display_second_category_id as secondCategoryId,
+        prosku.product_info_spec_id as productInfoSpecId,
+        pro.product_info_id as productInfoId,
+        pro.brand_id as brandId,
+        ifnull(prosku.product_sku_img,pro.imgurl) as imageUrl,
+        prosku.sale_spec_id as saleSpecId,
+        prosku.product_state as productState,
+        prosku.sale_prolicy_id as saleProlicyId,
+        prosku.sequence as sequence,
+        prosku.product_sku_id as productSkuId,
+        prosku.sale_model as saleModel,
+        prosku.shop_id as shopId
+        from product_sku prosku inner join product pro
+        on prosku.product_id=pro.product_info_id
+        where prosku.state=1
+        limit 200
+
+
+    </select>
+
+
+    <insert id="insertProductSku" parameterType="com.example.springbootdemo.scheduled.bean.ProductSkuDTO">
+        <selectKey keyProperty="id" order="BEFORE" resultType="long">
+            SELECT UUID_SHORT() as id
+        </selectKey>
+        insert into product_sku
+        (id,product_sku_id,product_id)
+        values
+        (
+        #{id},
+        #{productSkuId},
+        #{productId}
+        )
+    </insert>
+
+
+    <select id="selectStatisticalGroup" resultType="com.example.springbootdemo.scheduled.bean.StatisticalGroupDTO">
+        SELECT
+        distinct
+        GroupName as groupName,
+        statistical_group as statisticalGroup
+        FROM product_displaycategory
+        where GroupName is not null
+        and statistical_group is not null
+        and state =1
+        <if test="list != null and list.size>0">
+            and id  in
+            <foreach collection="list" item="item" separator="," open="(" close=")">
+                #{item}
+            </foreach>
+        </if>
+        order by statistical_group
+    </select>
+</mapper>

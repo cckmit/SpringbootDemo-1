@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration status="info" name="MyApp" monitorInterval="3">
+	<Properties>
+		<Property name="PATTERN" value="%d %p [%traceId] %c{1.} [%t] %m%n" />
+		<property name="FILE_PATH" value="D:/yijiupi_code/easysale-saas/springboot-demo/src/log" />
+		<property name="FILE_SIZE" value="50 MB" />
+	</Properties>
+	<Appenders>
+		<!-- 控制台日志打印 -->
+		<Console name="Console" target="SYSTEM_OUT">
+<!--			<PatternLayout pattern="%d %-4r [%t] %-5p [%traceId] %c %x - %m%n"/>-->
+<!--			<PatternLayout pattern="${PATTERN}" />-->
+<!--			<PatternLayout pattern="%d %p %id %c{1.} [%t] %m%n" />-->
+			<PatternLayout pattern="%d %-4r [%t] %-5p %id %c %x - %m%n%M" />
+		</Console>
+		<!-- 生产环境日志打印 -->
+		<!-- fileName表示创建的日志文件名，filePattern表示如果日志策略按照日期与大小做限定的话，如果大小超过50m就会按该格式将之前的的日志文件重命名，并重新创建新的fileName。同理，如果日期超过限定的时间，也会进行同样的操作，下文定义一天建一个，如果想一分钟建一个则filePattern="${FILE_PATH}/demo-%d{yyyy-MM-dd HH-mm}-%i.log" 如此定义-->
+		<RollingFile name="ProdFile"
+					 fileName="${FILE_PATH}/${hostName}.log"
+					 filePattern="${FILE_PATH}/demo-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${PATTERN}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="${FILE_SIZE}"/>
+			</Policies>
+		<!--	<Filters>
+				<ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY" />
+			</Filters>-->
+		</RollingFile>
+	</Appenders>
+
+	<!-- root部分定义了log4j2的默认输出级别和方式 -->
+	<loggers>
+		<logger name="java.sql.*" level="debug" additivity="true"></logger>
+		<root level="info">
+			<appender-ref ref="Console" />
+			<appender-ref ref="ProdFile" />
+		</root>
+	</loggers>
+
+</configuration>

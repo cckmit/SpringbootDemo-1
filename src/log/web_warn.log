@@ -1,0 +1,20 @@
+2020-09-27 17:03:14.909 [main] WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/E:/maven/repository/org/json/json/20140107/json-20140107.jar!/org/json/JSONObject.class
+	jar:file:/E:/maven/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behaviour
+
+2020-09-27 17:03:22.780 [main] WARN  com.example.springbootdemo.LogTest - 警告进行
+2020-09-27 17:03:54.325 [main] WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/E:/maven/repository/org/json/json/20140107/json-20140107.jar!/org/json/JSONObject.class
+	jar:file:/E:/maven/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behaviour
+
+2020-09-27 17:04:03.906 [main] WARN  com.example.springbootdemo.LogTest - 警告进行

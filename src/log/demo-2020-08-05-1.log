@@ -1,0 +1,179 @@
+[16:39:00.385 ERROR] [main] example.springbootdemo.LogTest - 错误信息
+2020-08-05 16:40:06,274 ERROR com.example.springbootdemo.LogTest#test01 [TID:N/A] [main] 错误信息
+2020-08-05 16:44:39,943 ERROR com.example.springbootdemo.LogTest#test01 [TID:N/A] [main] 错误信息
+2020-08-05 16:48:29,391 ERROR com.example.springbootdemo.LogTest#test01 [TID:N/A] [main] 错误信息
+2020-08-05 16:51:01,113 ERROR com.example.springbootdemo.LogTest#test01 [TID:N/A] [main] 错误信息
+2020-08-05 16:59:01,257 INFO [mainraceId] o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.springbootdemo.LogTest], using SpringBootContextLoader
+2020-08-05 16:59:01,286 INFO [mainraceId] o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [com.example.springbootdemo.LogTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-05 16:59:01,287 INFO [mainraceId] o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.springbootdemo.LogTest]: LogTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-05 16:59:01,716 INFO [mainraceId] o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.springbootdemo.SpringbootDemoApplication for test class com.example.springbootdemo.LogTest
+2020-08-05 16:59:02,049 INFO [mainraceId] o.s.b.t.c.SpringBootTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-05 16:59:02,108 INFO [mainraceId] o.s.b.t.c.SpringBootTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@11d8ae8b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@479cbee5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@59e2d8e3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2b72cb8a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7f8a9499, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5d43661b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@12299890, org.springframework.test.context.event.EventPublishingTestExecutionListener@2fba3fc4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4bf48f6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@420a85c4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1c39680d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@62833051, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1c852c0f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@a37aefe]
+2020-08-05 16:59:03,427 ERROR [mainraceId] o.s.b.SpringApplication [main] Application run failed
+java.lang.IllegalStateException: java.io.FileNotFoundException: D:\yijiupi_code\easysale-saas\springboot-demo\log4j2.xml (系统找不到指定的文件。)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:317) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345) [spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.jar:4.13]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+Caused by: java.io.FileNotFoundException: D:\yijiupi_code\easysale-saas\springboot-demo\log4j2.xml (系统找不到指定的文件。)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_101]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_101]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_101]
+	at java.io.FileInputStream.<init>(FileInputStream.java:93) ~[?:1.8.0_101]
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90) ~[?:1.8.0_101]
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188) ~[?:1.8.0_101]
+	at java.net.URL.openStream(URL.java:1045) ~[?:1.8.0_101]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:310) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	... 39 more
+2020-08-05 16:59:03,511 ERROR [mainraceId] o.s.t.c.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@11d8ae8b] to prepare test instance [com.example.springbootdemo.LogTest@53dbe163]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123) ~[spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.jar:4.13]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+Caused by: java.lang.IllegalStateException: java.io.FileNotFoundException: D:\yijiupi_code\easysale-saas\springboot-demo\log4j2.xml (系统找不到指定的文件。)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:317) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	... 25 more
+Caused by: java.io.FileNotFoundException: D:\yijiupi_code\easysale-saas\springboot-demo\log4j2.xml (系统找不到指定的文件。)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_101]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_101]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_101]
+	at java.io.FileInputStream.<init>(FileInputStream.java:93) ~[?:1.8.0_101]
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90) ~[?:1.8.0_101]
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188) ~[?:1.8.0_101]
+	at java.net.URL.openStream(URL.java:1045) ~[?:1.8.0_101]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:310) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	... 25 more
+2020-08-05 17:00:17,587 INFO [mainraceId] o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.springbootdemo.LogTest], using SpringBootContextLoader
+2020-08-05 17:00:17,606 INFO [mainraceId] o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [com.example.springbootdemo.LogTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-05 17:00:17,608 INFO [mainraceId] o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.springbootdemo.LogTest]: LogTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-05 17:00:17,935 INFO [mainraceId] o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.springbootdemo.SpringbootDemoApplication for test class com.example.springbootdemo.LogTest
+2020-08-05 17:00:18,199 INFO [mainraceId] o.s.b.t.c.SpringBootTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-05 17:00:18,243 INFO [mainraceId] o.s.b.t.c.SpringBootTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@11d8ae8b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@479cbee5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@59e2d8e3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2b72cb8a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7f8a9499, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5d43661b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@12299890, org.springframework.test.context.event.EventPublishingTestExecutionListener@2fba3fc4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4bf48f6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@420a85c4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1c39680d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@62833051, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1c852c0f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@a37aefe]
+2020-08-05 17:00:19,063 INFO [mainraceId] c.e.s.LogTest [main] Starting LogTest on DESKTOP-42AA0FD with PID 23788 (started by shuwending in D:\yijiupi_code\easysale-saas\springboot-demo)
+2020-08-05 17:00:19,080 INFO [mainraceId] c.e.s.LogTest [main] No active profile set, falling back to default profiles: default
+2020-08-05 17:00:21,013 INFO [mainraceId] o.s.d.r.c.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-05 17:00:21,022 INFO [mainraceId] o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-05 17:00:21,090 INFO [mainraceId] o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 48ms. Found 0 Redis repository interfaces.
+2020-08-05 17:00:21,807 INFO [mainraceId] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'asyncConfig' of type [com.example.springbootdemo.scheduled.config.AsyncConfig$$EnhancerBySpringCGLIB$$b399c573] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-05 17:00:22,795 INFO [mainraceId] o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2020-08-05 17:00:22,817 INFO [mainraceId] o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService 'threadPoolTaskScheduler'
+2020-08-05 17:00:23,464 INFO [mainraceId] o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService
+2020-08-05 17:00:23,485 INFO [mainraceId] o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'threadPoolTaskExecutor'
+2020-08-05 17:00:25,029 INFO [mainraceId] c.y.f.l.LogPatternAutoConfiguration [main] Ready to read source log4j2.xml 
+2020-08-05 17:00:25,031 INFO [mainraceId] c.y.f.l.LogPatternAutoConfiguration [main] Write new config content to log4j2.xml
+2020-08-05 17:00:27,174 INFO [mainraceId] o.q.i.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
+2020-08-05 17:00:27,206 INFO [mainraceId] o.q.c.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-05 17:00:27,208 INFO [mainraceId] o.q.c.QuartzScheduler [main] Quartz Scheduler v.2.2.1 created.
+2020-08-05 17:00:27,209 INFO [mainraceId] o.q.s.RAMJobStore [main] RAMJobStore initialized.
+2020-08-05 17:00:27,211 INFO [mainraceId] o.q.c.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-05 17:00:27,211 INFO [mainraceId] o.q.i.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-08-05 17:00:27,211 INFO [mainraceId] o.q.i.StdSchedulerFactory [main] Quartz scheduler version: 2.2.1
+2020-08-05 17:00:27,212 INFO [mainraceId] o.q.c.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@28d739f1
+2020-08-05 17:00:27,345 INFO [mainraceId] o.s.s.q.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2020-08-05 17:00:27,346 INFO [mainraceId] o.q.c.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-08-05 17:00:27,366 INFO [mainraceId] c.e.s.LogTest [main] Started LogTest in 8.975 seconds (JVM running for 11.917)
+2020-08-05 17:00:27,782 INFO com.example.springbootdemo.LogTest#test01 [TID:N/A] [main] 普通信息
+2020-08-05 17:00:27,785 WARN com.example.springbootdemo.LogTest#test01 [TID:N/A] [main] 警告进行
+2020-08-05 17:00:27,785 ERROR com.example.springbootdemo.LogTest#test01 [TID:N/A] [main] 错误信息
+2020-08-05 17:00:27,817 INFO org.quartz.core.QuartzScheduler#standby [TID:N/A] [SpringContextShutdownHook] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-08-05 17:00:27,830 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean#destroy [TID:N/A] [SpringContextShutdownHook] Shutting down Quartz Scheduler
+2020-08-05 17:00:27,831 INFO org.quartz.core.QuartzScheduler#shutdown [TID:N/A] [SpringContextShutdownHook] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-08-05 17:00:27,833 INFO org.quartz.core.QuartzScheduler#standby [TID:N/A] [SpringContextShutdownHook] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-08-05 17:00:27,834 INFO org.quartz.core.QuartzScheduler#shutdown [TID:N/A] [SpringContextShutdownHook] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-08-05 17:00:27,867 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport#shutdown [TID:N/A] [SpringContextShutdownHook] Shutting down ExecutorService 'threadPoolTaskExecutor'
+2020-08-05 17:00:27,867 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport#shutdown [TID:N/A] [SpringContextShutdownHook] Shutting down ExecutorService 'threadPoolTaskScheduler'
+   info 
