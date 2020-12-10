@@ -1,7 +1,9 @@
 package com.example.springbootdemo;
 
+import com.example.springbootdemo.scheduled.bean.DiscountProductPO;
 import com.example.springbootdemo.scheduled.bean.StatisticalGroupDTO;
 import com.example.springbootdemo.scheduled.bean.Temp;
+import com.example.springbootdemo.scheduled.dao.DiscountProductMapper;
 import com.example.springbootdemo.scheduled.dao.ProductSkuDao;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.util.MetaObjectUtil;
@@ -16,10 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * @program: springboot-demo
@@ -33,6 +32,9 @@ public class MybatisTest {
 
     @Autowired
     private ProductSkuDao productSkuDao;
+
+    @Autowired
+    private DiscountProductMapper discountProductMapper;
 
     @Test
     public void test01(){
@@ -76,6 +78,19 @@ public class MybatisTest {
         List<StatisticalGroupDTO> statisticalGroupList= productSkuDao.selectStatisticalGroup(Lists.newArrayList("3396"));
         Optional<StatisticalGroupDTO> first = statisticalGroupList.stream().filter(statisticalGroupDTO -> 6 == statisticalGroupDTO.getStatisticalGroup()).findFirst();
         System.out.println(first.isPresent());
+
+    }
+
+    @Test
+    public void test05(){
+        DiscountProductPO po1 = new DiscountProductPO();
+        po1.setId(170597830560335742L);
+        po1.setJpLimitId(1);
+        DiscountProductPO po2 = new DiscountProductPO();
+        po2.setId(170597830560335840L);
+        po2.setJpLimitId(2);
+        ArrayList<DiscountProductPO> discountProductPOS = Lists.newArrayList(po1, po2);
+        discountProductMapper.batchUpdateDiscountProductLimitId(discountProductPOS);
 
     }
 }

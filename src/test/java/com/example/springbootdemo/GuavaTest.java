@@ -5,6 +5,7 @@ import com.example.springbootdemo.scheduled.bean.ProductSkuDTO;
 import com.example.springbootdemo.scheduled.bean.Temp;
 import com.example.springbootdemo.utils.DateUtil;
 import com.example.springbootdemo.utils.DateUtils;
+import com.example.springbootdemo.utils.ListSublistUtil;
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
@@ -99,10 +100,15 @@ public class GuavaTest {
 
     @org.junit.Test
     public void test05(){
-        BigDecimal numberOfLargeUnits = BigDecimal.valueOf(19.3);
-        System.out.println( numberOfLargeUnits.compareTo(BigDecimal.valueOf(20))>=0);
-
-
+        String url1 = "";
+        String url2 = "";
+        String url3 = "";
+        url1.replace("http", "https").replace("ufile.ucloud.com.cn", "yijiupi.com").replace("ufile.ucloud.cn", "yijiupi.com");
+        url2.replace("http", "https").replace("ufile.ucloud.com.cn", "yijiupi.com").replace("ufile.ucloud.cn", "yijiupi.com");
+        url3.replace("http", "https").replace("ufile.ucloud.com.cn", "yijiupi.com").replace("ufile.ucloud.cn", "yijiupi.com");
+        System.out.println(url1);
+        System.out.println(url2);
+        System.out.println(url3);
 
     }
 }

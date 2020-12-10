@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @program: springboot-demo
@@ -50,7 +51,7 @@ public class TestController {
      * @return
      */
     @PostMapping(value = "/test01")
-    public String  test01(@RequestBody @Valid Temp dto) {
+    public String  test01(@RequestBody List<Temp> dto) {
         return JSONObject.toJSONString(dto);
     }
 
