@@ -11,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.connection.RedisSentinelConnection;
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -64,10 +66,7 @@ class SpringbootDemoApplicationTests {
 
     }
 
-    @Test
-    void restTest() {
-        DingtalkRobotMessageUtils.sendDingtalkRobotMessageMarkdown("经销商订单结算异常-测试","java.lang.NullPointerException");
-    }
+
 
     @Test
     void Xtest1() {
