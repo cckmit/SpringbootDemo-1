@@ -21,6 +21,23 @@
 
     </update>
 
+    <select id="getDiscountProductList" resultType="string">
+        select
+        dr.region_id
+        from discount_product ds
+        inner join discount_activity da
+        on ds.discount_id=da.id
+        inner join discount_area dr
+        on dr.discount_id=da.id
+        where ds.product_sku_id=#{productSkuId}
+        and da.shop_id=#{shopId}
+        and da.state=2
+        and (da.activity_start_time <![CDATA[<=]]> #{endTime}
+        and da.activity_end_time <![CDATA[>=]]> #{beginTime}
+        )
+    </select>
+
+
 
 
 </mapper>

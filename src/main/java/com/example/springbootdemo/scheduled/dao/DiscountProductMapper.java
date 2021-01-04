@@ -1,5 +1,6 @@
 package com.example.springbootdemo.scheduled.dao;
 
+import com.example.springbootdemo.bean.SkuPromotionDTO;
 import com.example.springbootdemo.scheduled.bean.DiscountProductPO;
 
 import java.util.List;
@@ -18,4 +19,12 @@ public interface DiscountProductMapper {
      * @return
      */
     int batchUpdateDiscountProductLimitId(List<DiscountProductPO> list);
+
+
+    /**
+     * 获取打折详情
+     * @param skuPromotionDTO
+     * @return
+     */
+    List<String> getDiscountProductList(SkuPromotionDTO skuPromotionDTO);
 }

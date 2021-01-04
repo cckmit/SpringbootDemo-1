@@ -1,9 +1,12 @@
 package com.example.springbootdemo;
 
+import com.example.springbootdemo.bean.SkuPromotionDTO;
 import com.example.springbootdemo.scheduled.bean.DiscountProductPO;
+import com.example.springbootdemo.scheduled.bean.OrderQuery;
 import com.example.springbootdemo.scheduled.bean.StatisticalGroupDTO;
 import com.example.springbootdemo.scheduled.bean.Temp;
 import com.example.springbootdemo.scheduled.dao.DiscountProductMapper;
+import com.example.springbootdemo.scheduled.dao.OrderMapper;
 import com.example.springbootdemo.scheduled.dao.ProductSkuDao;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.util.MetaObjectUtil;
@@ -19,6 +22,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @program: springboot-demo
@@ -35,6 +40,9 @@ public class MybatisTest {
 
     @Autowired
     private DiscountProductMapper discountProductMapper;
+
+    @Autowired
+    private OrderMapper orderMapper;
 
     @Test
     public void test01(){
@@ -91,6 +99,34 @@ public class MybatisTest {
         po2.setJpLimitId(2);
         ArrayList<DiscountProductPO> discountProductPOS = Lists.newArrayList(po1, po2);
         discountProductMapper.batchUpdateDiscountProductLimitId(discountProductPOS);
+
+    }
+
+
+    @Test
+    public void test06(){
+        SkuPromotionDTO skuPromotion=new SkuPromotionDTO();
+        skuPromotion.setShopId("123456");
+        skuPromotion.setBeginTime(new Date());
+        skuPromotion.setEndTime(new Date());
+        skuPromotion.setProductSkuId("2134679");
+        List<String> discountProductList = discountProductMapper.getDiscountProductList(skuPromotion);
+
+    }
+
+    @Test
+    public void test07(){
+        OrderQuery orderQuery =new OrderQuery();
+        orderQuery.setOrderCreateStartTime("2020-10-01");
+        Set<String> set = orderMapper.queryOrdersShopIds(orderQuery);
+    }
+
+    @Test
+    public void test08(){
+        ArrayList<OrderQuery> orderQueries =null;
+        ArrayList<String> dealerIdList = Lists.newArrayList("1");
+//        List<OrderQuery> itemList = orderQueries.stream().filter(p -> p.getContact() != null && dealerIdList.contains(String.valueOf(p.getContact()))).collect(Collectors.toList());
+        List<OrderQuery> collect = Optional.ofNullable(orderQueries).map(List::stream).orElseGet(Stream::empty).filter(p -> p.getContact() != null && dealerIdList.contains(String.valueOf(p.getContact()))).collect(Collectors.toList());
 
     }
 }

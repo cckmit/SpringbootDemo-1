@@ -21,6 +21,7 @@ public interface ProductSkuDao {
      * @return
      */
     Page<Map> selectProductSkuList(Map map);
+
     void insertProductSku(ProductSkuDTO productSkuDTO);
 
 

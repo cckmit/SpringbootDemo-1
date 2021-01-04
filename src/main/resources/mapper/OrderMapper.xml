@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.scheduled.dao.OrderMapper">
+
+
+    <select id="queryOrdersShopIds" resultType="String"
+            parameterType="com.example.springbootdemo.scheduled.bean.OrderQuery">
+        SELECT shop_id
+        FROM `order`
+        where order_create_time <![CDATA[ >= ]]> #{orderCreateStartTime}
+        GROUP by shop_id
+    </select>
+
+
+</mapper>
