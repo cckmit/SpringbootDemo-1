@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
@@ -78,6 +79,16 @@ public class TestController {
     public String  test04(@RequestBody Temp dto) {
          return testService.testAutoCache(dto);
 //        return testService.getToken();
+    }
+
+  /**
+     * 发送特殊消息
+     *
+     * @return
+     */
+    @PostMapping(value = "/test05")
+    public String test05(MultipartFile file) {
+        return JSONObject.toJSONString(file);
     }
 
 

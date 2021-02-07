@@ -1,6 +1,7 @@
 package com.example.springbootdemo;
 
 import com.example.springbootdemo.bean.SkuPromotionDTO;
+import com.example.springbootdemo.enums.ErpType;
 import com.example.springbootdemo.scheduled.bean.DiscountProductPO;
 import com.example.springbootdemo.scheduled.bean.OrderQuery;
 import com.example.springbootdemo.scheduled.bean.StatisticalGroupDTO;
@@ -11,6 +12,7 @@ import com.example.springbootdemo.scheduled.dao.ProductSkuDao;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.util.MetaObjectUtil;
 import com.google.common.collect.Lists;
+import okhttp3.*;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.wrapper.MapWrapper;
 import org.apache.ibatis.reflection.wrapper.ObjectWrapper;
@@ -21,6 +23,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -129,4 +136,6 @@ public class MybatisTest {
         List<OrderQuery> collect = Optional.ofNullable(orderQueries).map(List::stream).orElseGet(Stream::empty).filter(p -> p.getContact() != null && dealerIdList.contains(String.valueOf(p.getContact()))).collect(Collectors.toList());
 
     }
+
+
 }
